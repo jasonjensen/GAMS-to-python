@@ -1,5 +1,5 @@
 $TITLE MODEL EXTER
-$STITLE AUTARCHY WITH GOVERNMENT
+$STITLE OPEN ECONOMY WITH GOVERNMENT
 
 * Model of a closed economy without government
 * 2 factors owned by 2 types of households

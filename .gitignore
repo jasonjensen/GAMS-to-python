@@ -1,4 +1,5 @@
 */data/*.gdx
+*/data/*.json
 *.log*
 *.lst
 *.lxi

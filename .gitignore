@@ -1,0 +1,5 @@
+*/data/*.gdx
+*.log*
+*.lst
+*.lxi
+*/output/*

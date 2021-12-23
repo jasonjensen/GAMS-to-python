@@ -1,4 +1,10 @@
-## Hello World
+---
+layout: post
+title:  Preparation
+subtitle: Packages, Solvers
+---
+
+These steps are useful or necessary prior to building the model in python.
 
 ### Preparation
 In python, I have found the `pyomo` package to be the most easily used for this conversion, but others may be just as versatile.
@@ -11,7 +17,7 @@ from pyomo.environ import AbstractModel, Set, Param, Var, Constraint
 import pyomo.dataportal.DataPortal as DataPortal
 
 m = AbstractModel()
-
+```
 
 
 

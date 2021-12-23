@@ -1,5 +1,11 @@
-```
-### Sets
+---
+layout: post
+title:  CGE Components
+subtitle: Sets, Variables, Parameters, Equations
+---
+This page covers the basic building blocks of a GCE model and how they are written in GAMS and Python.
+
+## Sets
 In CGE models, variables and equations are defined across values of sets or combinations of sets. In GAMS, sets are defined like so:
 
 ```GAMS

@@ -1,1 +1,51 @@
-theme: jekyll-theme-midnight
+### your site title here
+
+title: GAMS-to-python
+# disabled because we are using a custom domain
+#baseurl: /hagura # name of the repository
+email: jason.o.jensen@gmail.com
+
+
+
+highlighter: rouge
+markdown: kramdown
+
+
+paginate: 10
+
+
+# Tracker
+#analytics: UA-83979019-4
+
+# Comments
+# disqus-shortname: webjeda-demo
+
+
+#optimization
+#compress.html
+compress_html:
+  clippings: [html,div, p, ul, td, h1, h2, h3, h4,link, meta, footer, nav, img, header, hr, br, head, style, li, ul, ol, time, main, script, title]
+  comments: ["<!-- ", " -->"]
+  endings: [all]
+  ignore:
+    envs: [local]
+  blanklines: false
+  profile: false
+  startings: []
+
+
+sass:
+  sass_dir: /assets/css/_sass
+  style: compressed
+
+include:
+  - _pages
+
+exclude:
+  - README.md
+  - LICENSE.md
+
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-paginate

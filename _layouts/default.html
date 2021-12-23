@@ -1,0 +1,46 @@
+---
+# layout: compress
+---
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css">
+
+        {% seo %}
+    </head>
+
+    <body style="background-color: rgb(255, 255, 255)">
+        <script async src="{{site.baseurl}}/assets/js/theme.min.js"></script>
+        <header>
+            <a href="{{site.baseurl}}/">
+                <div class="home"></div>
+            </a>
+        </header>
+
+        <main>
+            <article>
+                {{ content }}
+            </article>
+        </main>
+
+        <footer>
+            <div class="links">
+                <a href="https://github.com/jasonjensen/GAMS-to-python">Github Repo</a>
+                <a href="{{site.baseurl}}/about/">About</a>
+                <a class="theme" onclick="theme()">Dark/Light</a>
+            </div>
+            <p class="copy">
+                <small>Copyright
+                    Jason Jensen
+                    | Theme by
+                    <a href="https://github.com/sharu725">sharu725</a>
+                </small>
+            </p>
+        </footer>
+        {% include analytics.html %}
+    </body>
+
+</html>

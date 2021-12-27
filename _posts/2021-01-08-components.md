@@ -8,7 +8,7 @@ This page covers the basic building blocks of a GCE model and how they are writt
 ## Sets
 In CGE models, variables and equations are defined across values of sets or combinations of sets. In GAMS, sets are defined like so:
 
-```GAMS
+```mathematica
 SET
 
 I All commodities
@@ -39,7 +39,7 @@ m.commodities = Set(dimen=1,initialize=commodities, doc='All commodities')
 
 ### Subsets
 Subsets in both GAMS and python must be defined exactly as sets:
-```GAMS
+```mathematica
 I1(I) All commodities except agriculture
 /
 * agr             Agriculture and other primary commodities
@@ -57,7 +57,7 @@ m.commodities_ex_agr = Set(dimen=1,initialize=commodities_ex_agr, doc='All commo
 
 ### Aliasing sets
 In GAMS, sets which need to be looped over in a nested fashion need to be aliased, so that multiple copies can be used in the same equation. This is done like so:
-```GAMS
+```mathematica
 SET
 ALIAS (i,ij)
 ;
@@ -72,7 +72,7 @@ In GAMS, defining a variable is a four-step process:
 * Define the variable (i.e. EXD).
 * Set the initial value of the variable to those of the parameter defined in step 1.
 
-```GAMS
+```mathematica
 PARAMETERS
 TICO(i)           Government revenue from indirect taxes on product i
 ;
@@ -120,7 +120,7 @@ m.C     = Var(m.commodities, m.households, doc='Consumption of commodity i by ty
 Parameters are essentially variables which do not change in value (but also not exactly fixed variables). In GAMS these are defined first with the `PARAMETERS` command, and later provided values with a separate command. In this case the parameter's values are based on the initial values of the VA and XST variables.
 
 
-```GAMS
+```mathematica
 PARAMETERS
 v(j)              Coefficient (Leontief - value added)
 ;
@@ -144,7 +144,7 @@ m.tm = Param(m.tradeables, doc='Tax rate on imported commodity tr', initialize=t
 
 ## Equations
 In GAMS, equations are declared and then defined, much as with variables and parameters. In this case, equation EQ1 is defined for each of the values of j.
-```GAMS
+```mathematica
 EQUATIONS
 
  EQ1(j)          Value added demand in industry j (Leontief)
@@ -180,7 +180,7 @@ m.EQ9 = Constraint(m.commodities, m.industries, rule=EQ9, doc='Intermediate cons
 
 ### Excluding combinations
 In GAMS, many equations are only defined over non-zero values of some of the included variables. This is done by including these variables with a `$` sign when defining the equation:
-```GAMS
+```mathematica
 EQ6(l,j)$LDO(l,j)..
                  LD(l,j) =e= [beta_LD(l,j)*WC(j)/WTI(l,j)]**sigma_LD(j)
                              *B_LD(j)**(sigma_LD(j)-1)*LDC(j);
@@ -198,7 +198,7 @@ m.EQ6 = Constraint(m.labour, m.industries, rule=EQ6, doc='Demand for type l labo
 
 ### Equations using sums and products
 Many equations include sums of variables. In GAMS, these are included with the `SUM` command with the last argument being the values to sum and the preceding argument(s) the values to sum over:
-```GAMS
+```mathematica
 EQ13(h)..       YHTR(h) =e= SUM[ag,TR(h,ag)];
 ```
 
@@ -211,7 +211,7 @@ m.EQ13 = Constraint(m.households, rule=EQ13, doc='Transfer income of type h hous
 ```
 
 Some sums are defined only over non-zero or existing values. In GAMS, this is defined in a similar way as when constraining the domain of equations:
-```GAMS
+```mathematica
 EQ11(h)..       YHL(h) =e= SUM{l,lambda_WL(h,l)*W(l)*SUM[j$LDO(l,j),LD(l,j)]};
 ```
 
@@ -228,7 +228,7 @@ m.EQ11 = Constraint(m.households, rule=EQ11, doc='Labor income of type h househo
 ```
 
 Products are handled in a similar fashion:
-```GAMS
+```mathematica
 EQ82..          PIXINV =e= PROD[i$gamma_INV(i),(PC(i)/PCO(i))**gamma_INV(i)];
 ```
 

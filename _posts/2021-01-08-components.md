@@ -2,6 +2,7 @@
 layout: post
 title:  CGE Components
 subtitle: Sets, Variables, Parameters, Equations
+permalink: /components/
 ---
 This page covers the basic building blocks of a GCE model and how they are written in GAMS and Python.
 
